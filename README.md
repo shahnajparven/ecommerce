@@ -1,9 +1,5 @@
 # Getting Started
 
-## Deploy Status
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d93b1a8a-5cd1-4791-a817-dbfbfde8cbcc/deploy-status)](https://app.netlify.com/sites/air-travel-solutya/deploys)
-
 ## Developer Experience
 
 - Reactjs
@@ -11,7 +7,6 @@
 - Redux Toolkit
 - React Hook Form + Yup
 - Material UI
-- Tailwind CSS + Daisyui (optional)
 
 ## Project setup for `Development`
 
@@ -27,8 +22,8 @@ sudo npm i -g yarn
 
 3. Install `Redux DevTools` extension on your browser. Here is the link for `chrome` <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd" target="_blank">Redux DevTools</a>.
 
-4. Clone project on your local machine by running `git clone https://github.com/Solutya/air-travel-management-fe.git`
+4. Clone project on your local machine by running `git@github.com:shahnajparven/ecommerce.git`
 
-5. Go to the project directory `air-travel-management-fe` and run `yarn` then `yarn prepare`.
+5. Go to the project directory `ecommerce-fe` and run `yarn` then `yarn prepare`.
 
 6. Finally run `yarn dev` to start the dev server.
