@@ -3,8 +3,11 @@ import Nav from "../pages/Nav";
 import { Banner } from "./Banner";
 const Home = () => {
   return (
-    <Box > <Nav/>
-    <Banner/></Box>
+    <Box > 
+    <Nav/>
+    <Banner/>
+
+    </Box>
   )
 }
 
