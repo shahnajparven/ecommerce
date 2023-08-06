@@ -16,7 +16,7 @@ import Button from "@mui/material/Button";
 import { Badge } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import "./Nav.css";
+import "./MainComponent.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
 import { Outlet } from "react-router-dom";
@@ -25,7 +25,7 @@ import Footer from "./Footer";
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
 
-function Nav(props) {
+function MainComponent(props) {
   ////modal
   const [state, setState] = React.useState({ right: false });
 
@@ -188,11 +188,11 @@ function Nav(props) {
         {/* this is where children pages will show */}
         <Outlet />
       </Box>
-      <Box zIndex={5} position="fixed" bottom={0}>
+      <Box zIndex={5} bottom={0}>
         <Footer />
       </Box>
     </>
   );
 }
 
-export default Nav;
+export default MainComponent;

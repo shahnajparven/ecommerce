@@ -1,8 +1,6 @@
-import React from 'react'
-
 const Spinner = () => {
   return (
-    <div>Loading...😭</div>
+    <div>Loading...</div>
   )
 }
 

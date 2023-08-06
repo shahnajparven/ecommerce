@@ -1,9 +1,20 @@
-import React from 'react'
+import { Box, Typography } from "@mui/material";
 
 const NotFound = () => {
   return (
-    <div>NotFound</div>
-  )
-}
+    <Box
+      width="100vw"
+      height="100vh"
+      display="flex"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Typography fontSize={50} fontWeight={600}>
+        NotFound...😭
+      </Typography>
+    </Box>
+  );
+};
 
-export default NotFound
+export default NotFound;
