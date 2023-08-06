@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import img1 from "../assets/banner11.jpg";
 import img2 from "../assets/banner22.jpg";
 import img3 from "../assets/banner33.jpg";
-import "./Nav.css";
+import "../index.css";
 import Carousel from "react-material-ui-carousel";
 
 export const Banner = () => {
@@ -18,7 +18,7 @@ export const Banner = () => {
         style: {
           color: "#583C99", // 2
         },
-      }}
+      }}s
       indicatorContainerProps={{
         style: {
             position:'absolute',
