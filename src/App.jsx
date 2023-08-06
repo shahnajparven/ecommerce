@@ -11,7 +11,8 @@ function App() {
     <>
       <Suspense fallback={<Spinner />}>
         <Routes>
-          <Route path="/" element={<MainComponent/>}>
+        <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<MainComponent/>}>
             <Route index element={<Home />} />
           </Route>
           <Route path="*" element={<NotFound />} />
