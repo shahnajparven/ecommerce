@@ -21,6 +21,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
+import Login from "./login";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
@@ -147,11 +148,17 @@ function MainComponent(props) {
                       open={state[anchor]}
                       onClose={toggleDrawer(anchor, false)}
                     >
-                      <Box width={{ lg: 500, md: 500, xs: 400 }} p={5}>
+                      <Box width={{ lg: 500, md: 500, xs: 400 }} py={2} px={5}>
                         <IconButton onClick={toggleDrawer(anchor, false)}>
                           <CloseIcon />
                         </IconButton>
-                        <Box> Sign In</Box>
+                        <Box mt={1}>
+                          <Divider />
+                        </Box>
+
+                        <Box>
+                          <Login />
+                        </Box>
                       </Box>
                     </Drawer>
                   </React.Fragment>
