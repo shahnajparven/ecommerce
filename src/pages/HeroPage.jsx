@@ -26,7 +26,7 @@ import Login from "./login";
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
 
-function MainComponent(props) {
+function HeroPage(props) {
   ////modal
   const [state, setState] = React.useState({ right: false });
 
@@ -202,4 +202,4 @@ function MainComponent(props) {
   );
 }
 
-export default MainComponent;
+export default HeroPage;

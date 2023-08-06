@@ -4,14 +4,14 @@ import Home from "./pages/Home";
 import "./index.css";
 import Spinner from "./components/Spinner";
 import NotFound from "./components/NotFound";
-import MainComponent from "./pages/MainComponent";
+import HeroPage from "./pages/HeroPage";
 
 function App() {
   return (
     <>
       <Suspense fallback={<Spinner />}>
         <Routes>
-          <Route path="/" element={<MainComponent/>}>
+          <Route path="/" element={<HeroPage/>}>
             <Route index element={<Home />} />
           </Route>
           <Route path="*" element={<NotFound />} />
