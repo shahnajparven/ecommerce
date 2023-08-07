@@ -1,11 +1,13 @@
 import { Box } from "@mui/material";
 import { Banner } from "./Banner";
-import Card from "./Card";
+import ProductCards from "./ProductCards";
+import About from "./About";
 const Home = () => {
   return (
     <Box > 
     <Banner/>
-    <Card/>
+    <ProductCards/>
+    <About/>
     </Box>
   )
 }

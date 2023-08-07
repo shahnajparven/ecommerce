@@ -16,7 +16,7 @@ import Button from "@mui/material/Button";
 import { Badge } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import "./MainComponent.css";
+import "./HeroPage.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
 import { Outlet } from "react-router-dom";
@@ -24,9 +24,10 @@ import Footer from "./Footer";
 import Login from "./login";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "About","Products", "Contact"];
 
 function HeroPage(props) {
+
   ////modal
   const [state, setState] = React.useState({ right: false });
 
@@ -47,7 +48,7 @@ function HeroPage(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
+  ////////////////////////////////////////////// for Mobile start
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -65,7 +66,7 @@ function HeroPage(props) {
       </List>
     </Box>
   );
-
+  ////////////////////////////////////////////// for Mobile end
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -73,6 +74,7 @@ function HeroPage(props) {
     <>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
+        {/******************************************** nav start********************************************* */}
         <AppBar component="nav">
           <Toolbar className="tolbar">
             <IconButton
@@ -131,7 +133,7 @@ function HeroPage(props) {
                 </IconButton>
                 {/* <p>Notifications</p> */}
               </Box>
-              {/* strat */}
+              {/*****************************strat login icon with modal************************ */}
               <Box className="navIcon">
                 {["right"].map((anchor) => (
                   <React.Fragment key={anchor}>
@@ -157,18 +159,18 @@ function HeroPage(props) {
                         </Box>
 
                         <Box>
-                          <Login />
+                          <Login props={toggleDrawer()}  anchor={anchor} state={state} setState={setState}/>
                         </Box>
                       </Box>
                     </Drawer>
                   </React.Fragment>
                 ))}
               </Box>
-
-              {/* end */}
+              {/*****************************end login icon with modal************************ */}
             </Box>
           </Toolbar>
         </AppBar>
+        {/********************************* for Mobile start**************************** */}
         <Box component="nav">
           <Drawer
             container={container}
@@ -189,7 +191,9 @@ function HeroPage(props) {
             {drawer}
           </Drawer>
         </Box>
+        {/********************************* for Mobile end**************************** */}
       </Box>
+      {/******************************************** nav end********************************************* */}
       <Box component="main">
         <Toolbar />
         {/* this is where children pages will show */}
