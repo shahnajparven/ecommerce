@@ -2,7 +2,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import { red } from "@mui/material/colors";
 const About = () => {
   return (
-    <Box className="container" py={5}>
+    <Box className="container" pt={2}>
       <Typography
         py={2}
         variant="h4"

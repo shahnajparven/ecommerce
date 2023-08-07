@@ -52,7 +52,7 @@ function HeroPage(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        BASKET
+        beautyBASKET
       </Typography>
       <Divider />
       <List>
@@ -91,7 +91,7 @@ function HeroPage(props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              BASKET
+               beautyBASKET
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (

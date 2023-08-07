@@ -1,13 +1,14 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import Cards from "./Cards";
-import img1 from "../assets/banner11.jpg";
-import img2 from "../assets/banner22.jpg";
-import img3 from "../assets/banner33.jpg";
+import product1 from "../assets/product1.jpg";
+import product2 from "../assets/product2.jpg";
+import product3 from "../assets/product3.jpg";
+import product5 from "../assets/product5.jpg";
 import { red } from "@mui/material/colors";
 
 const products = [
   {
-    img: img1,
+    img: product1,
     title: "Shrimp and Chorizo Paella",
     subheader: "September 14, 2016",
     passage1:
@@ -16,7 +17,7 @@ const products = [
       "Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.",
   },
   {
-    img: img2,
+    img: product5,
     title: "Shrimp and Chorizo Paella",
     subheader: "September 14, 2016",
     passage1:
@@ -25,7 +26,7 @@ const products = [
       "Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.",
   },
   {
-    img: img3,
+    img: product2,
     title: "Shrimp and Chorizo Paella",
     subheader: "September 14, 2016",
     passage1:

@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
-import img1 from "../assets/banner11.jpg";
-import img2 from "../assets/banner22.jpg";
-import img3 from "../assets/banner33.jpg";
+import img1 from "../assets/banner1.jpg";
+import img2 from "../assets/banner4.jpg";
+import img3 from "../assets/banner3.jpg";
+import product3 from "../assets/product3.jpg";
 import "../index.css";
 import Carousel from "react-material-ui-carousel";
 
@@ -45,13 +46,13 @@ export const Banner = () => {
       PrevIcon={false}
     >
       <Box className='banner' height="70vh" display="flex" justifyContent="center">
+        <img src={product3} alt="" width="100%" height="100%" overflow="hidden" />
+      </Box>
+      <Box  className='banner' height="70vh" display="flex" justifyContent="center">
         <img src={img1} alt="" width="100%" height="100%" overflow="hidden" />
       </Box>
       <Box  className='banner' height="70vh" display="flex" justifyContent="center">
-        <img src={img2} alt="" width="100%" height="100%" overflow="hidden" />
-      </Box>
-      <Box  className='banner' height="70vh" display="flex" justifyContent="center">
-        <img width="100%" height="100%" src={img3} alt="" overflow="hidden" />
+        <img width="100%" height="100%" src={img2} alt="" overflow="hidden" />
       </Box>
     </Carousel>
   );
