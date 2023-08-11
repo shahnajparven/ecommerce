@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <Box
-      width="100vw"
+      sx={{width:"100%"}}
       backgroundColor="#2D2727"
       display="flex"
       flexDirection="row"

@@ -53,7 +53,8 @@ export default function ProductCards() {
       <Box
         py={5}
         display="flex"
-        flexDirection={{ lg: "row", sm: "column", xs: "column" }}
+        flexDirection={{ lg: "row", sm: "row", xs: "column" }}
+        flexWrap='wrap'
         justifyContent="center"
         gap={4}
       >

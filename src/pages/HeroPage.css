@@ -4,3 +4,12 @@ background-color:#2D2727;
 .navIcon{
    padding-left: 2rem;
 }
+.navItem{
+   text-decoration: none;
+   color: #ffffff;
+}
+.speedDialIcon {
+   width: 40px;
+   height: 40px;
+   border-radius: 80%;
+ }

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -19,14 +20,49 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import "./HeroPage.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import Login from "./login";
-
+import Login from "./user/login";
+import { useDispatch, useSelector } from "react-redux";
+import UserOption from "./user/UserOption";
 const drawerWidth = 240;
-const navItems = ["Home", "About","Products", "Contact"];
+const navItems = [
+  <Box>
+    <Link className="navItem" to="/">
+      Home
+    </Link>
+  </Box>,
+  <Box>
+    <Link className="navItem" to="#">
+      About
+    </Link>
+  </Box>,
+  <Box>
+    <Link className="navItem" to="#">
+      Products
+    </Link>
+  </Box>,
+  <Box>
+    <Link className="navItem" to="contact">
+      Contact
+    </Link>
+  </Box>,
+];
 
 function HeroPage(props) {
+  
+
+  const dispatch = useDispatch();
+  const {isLoggedIn } = useSelector((state) => state.user);
+
+  
+  const [loggedinIcon, setLoggedinIcon] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isLoggedIn) {
+      setLoggedinIcon(true)
+    }
+  }, [dispatch,isLoggedIn]);
 
   ////modal
   const [state, setState] = React.useState({ right: false });
@@ -71,9 +107,10 @@ function HeroPage(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <>
-      <Box sx={{ display: "flex" }}>
+    <Box>
+      <Box sx={{ display: "flex" }} overflow="hidden">
         <CssBaseline />
+      
         {/******************************************** nav start********************************************* */}
         <AppBar component="nav">
           <Toolbar className="tolbar">
@@ -91,7 +128,7 @@ function HeroPage(props) {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-               beautyBASKET
+              beautyBASKET
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
@@ -100,6 +137,9 @@ function HeroPage(props) {
                 </Button>
               ))}
             </Box>
+            {/* *************** **********************************************/}
+          
+            {/* *************** **********************************************/}
             <Box
               className="icons"
               sx={{
@@ -134,38 +174,57 @@ function HeroPage(props) {
                 {/* <p>Notifications</p> */}
               </Box>
               {/*****************************strat login icon with modal************************ */}
-              <Box className="navIcon">
-                {["right"].map((anchor) => (
-                  <React.Fragment key={anchor}>
-                    <IconButton
-                      onClick={toggleDrawer(anchor, true)}
-                      size="small"
-                      color="inherit"
-                    >
-                      <AccountCircle />
-                    </IconButton>
-                    {/* <p>account</p> */}
-                    <Drawer
-                      anchor={anchor}
-                      open={state[anchor]}
-                      onClose={toggleDrawer(anchor, false)}
-                    >
-                      <Box width={{ lg: 500, md: 500, xs: 400 }} py={2} px={5}>
-                        <IconButton onClick={toggleDrawer(anchor, false)}>
-                          <CloseIcon />
-                        </IconButton>
-                        <Box mt={1}>
-                          <Divider />
-                        </Box>
 
-                        <Box>
-                          <Login props={toggleDrawer()}  anchor={anchor} state={state} setState={setState}/>
-                        </Box>
-                      </Box>
-                    </Drawer>
-                  </React.Fragment>
-                ))}
+              <Box className="navIcon">
+              {loggedinIcon ? 
+                  <Box>
+                    <UserOption setLoggedinIcon={setLoggedinIcon}/>
+                  </Box>
+                
+                  : <Box> 
+                    {["right"].map((anchor) => (
+                      <React.Fragment key={anchor}>
+                        <IconButton
+                          onClick={toggleDrawer(anchor, true)}
+                          size="small"
+                          color="inherit"
+                        >
+                          <AccountCircle />
+                        </IconButton>
+                        {/* <p>account</p> */}
+                        <Drawer
+                          anchor={anchor}
+                          open={state[anchor]}
+                          onClose={toggleDrawer(anchor, false)}
+                        >
+                          <Box
+                            width={{ lg: 500, md: 500, xs: 400 }}
+                            py={2}
+                            px={5}
+                          >
+                            <IconButton onClick={toggleDrawer(anchor, false)}>
+                              <CloseIcon />
+                            </IconButton>
+                            <Box mt={1}>
+                              <Divider />
+                            </Box>
+
+                            <Box>
+                              <Login
+                                props={toggleDrawer()}
+                                anchor={anchor}
+                                state={state}
+                                setState={setState}
+                              />
+                            </Box>
+                          </Box>
+                        </Drawer>
+                      </React.Fragment>
+                    ))}
+                  </Box>
+                }
               </Box>
+              
               {/*****************************end login icon with modal************************ */}
             </Box>
           </Toolbar>
@@ -202,7 +261,7 @@ function HeroPage(props) {
       <Box zIndex={5} bottom={0}>
         <Footer />
       </Box>
-    </>
+    </Box>
   );
 }
 
