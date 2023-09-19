@@ -1,8 +1,8 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Cards from "./Cards";
 import product1 from "../assets/product1.jpg";
 import product2 from "../assets/product2.jpg";
-import product3 from "../assets/product3.jpg";
+// import product3 from "../assets/product3.jpg";
 import product5 from "../assets/product5.jpg";
 import { red } from "@mui/material/colors";
 

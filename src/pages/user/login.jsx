@@ -5,8 +5,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useForm, Controller, FormProvider } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { clearError, loginUser, regUser, reset } from "../../store/userSlice";
-import { ToastContainer, toast } from "react-toastify";
+import {  loginUser, regUser } from "../../store/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 
 const schema = yup.object({
@@ -23,28 +22,17 @@ const login = ({ anchor, setState }) => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
-  const { isLoading, error, message, success, isLoggedIn } = useSelector(
-    (state) => state.user
+  const { isLoading,isLoggedIn } = useSelector(
+    (state) => state.auth
   );
 
   useEffect(() => {
     if (isLoggedIn) {
       setState(anchor, false);
     }
-    if (success) {
-      toast.success(message);
-      dispatch(reset());
-    }
-    if (error) {
-      toast.error(error);
-      dispatch(clearError());
-    }
   }, [
     dispatch,
     isLoggedIn,
-    error,
-    message,
-    success,
     setState,
     anchor,
   ]);
@@ -72,7 +60,6 @@ const login = ({ anchor, setState }) => {
       ) : (
         <FormProvider {...form}>
           <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-            <ToastContainer />
             <Box
               py={2}
               display="flex"

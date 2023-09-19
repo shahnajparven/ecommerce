@@ -3,7 +3,7 @@ import { Banner } from "./Banner";
 import ProductCards from "./ProductCards";
 import About from "./About";
 import InfoCard from "./InfoCard";
-import Products from "./Products";
+import Footer from "./Footer";
 const Home = () => {
   return (
     <Box overflow='hidden'> 
@@ -11,7 +11,7 @@ const Home = () => {
     <ProductCards/>
     <About/>
     <InfoCard/>
-    <Products/>
+    <Footer />
     </Box>
   )
 }

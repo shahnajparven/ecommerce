@@ -2,7 +2,7 @@ import { Box } from "@mui/material"
 
 const Contact = () => {
   return (
-    <Box >Contact</Box>
+    <Box>Contact</Box>
   )
 }
 

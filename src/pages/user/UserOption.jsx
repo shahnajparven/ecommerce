@@ -2,21 +2,20 @@
 import { useState } from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import DashboardIcon from "@mui/icons-material/Dashboard";
 import { Box, SpeedDial, SpeedDialAction } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { logoutUser } from "../../store/userSlice";
+import { logoutUser } from "../../store/authSlice";
 import img from "../../assets/user.png";
 import "../HeroPage.css";
 import { useNavigate } from "react-router-dom";
 
-const UserOption = ({ setLoggedinIcon, user }) => {
+const UserOption = ({ user }) => {
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
   const [open, setOpen] = useState(false);
-console.log(user,'useroptions')
+
   const options = [
     {
       icon: <PersonIcon />,
@@ -30,36 +29,43 @@ console.log(user,'useroptions')
     },
   ];
 
-  // if (user.role === "admin") {
-  //   options.unshift({
-  //     icon: <DashboardIcon />,
-  //     name: "Admin",
-  //     func: dashboard,
-  //   });
-  // }
+  if (user.role === "admin") {
+    options.unshift({
+      icon: <DashboardIcon />,
+      name: "Admin",
+      func: dashboard,
+    });
+  }
 
-  // function dashboard() {
-  //   console.log("first");
-  // }
+  function dashboard() {
+    navigateTo("dashboard");
+  }
   function accoutFunction() {
     navigateTo("profile");
   }
   function logoutFunction() {
     dispatch(logoutUser());
-    setLoggedinIcon(false);
   }
 
   return (
-    <Box>
-      <ToastContainer />
+    <>
+    <Box
+    className="imgicon"
+      display="flex"
+      justifyContent="right"
+      position="absolute"
+      top={12}
+      right={10}
+    >
       <SpeedDial
+       className="imgicon"
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        style={{ zIndex: "11", height: 10 }}
+        style={{ zIndex:30 , height: 5 }}
         open={open}
         direction="down"
-        FabProps={{ size: "small", style: { backgroundColor: "#ff0000" } }}
+        FabProps={{ size: "small", style: { backgroundColor: "#2D2727",width: 35 } }}
         icon={<img className="speedDialIcon" src={img} alt="Profile" />}
       >
         {options.map((item) => (
@@ -72,7 +78,11 @@ console.log(user,'useroptions')
           />
         ))}
       </SpeedDial>
+      {/* <Box>
+        jnjbjhb:{user.name}
+      </Box> */}
     </Box>
+    </>
   );
 };
 
