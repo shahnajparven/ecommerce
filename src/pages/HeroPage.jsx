@@ -14,9 +14,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Badge } from "@mui/material";
+import { Avatar, Badge } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+// import AccountCircle from "@mui/icons-material/AccountCircle";
 import "./HeroPage.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CloseIcon from "@mui/icons-material/Close";
@@ -177,13 +177,16 @@ const HeroPage = (props) => {
                 <Box>
                   {["right"].map((anchor) => (
                     <React.Fragment key={anchor}>
-                      <IconButton
+                      {/* <IconButton
                         onClick={toggleDrawer(anchor, true)}
                         size="small"
                         color="inherit"
                       >
                         <AccountCircle />
-                      </IconButton>
+                      </IconButton> */}
+                      <Box sx={{cursor:'pointer'}}  onClick={toggleDrawer(anchor, true)}>
+                      <Avatar sx={{ width: 30, height: 30 }} />
+                      </Box>
                       {/* <p>account</p> */}
                       <Drawer
                         anchor={anchor}
